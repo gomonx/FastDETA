@@ -1,4 +1,4 @@
-# FastAPI on DETA
+# FastAPI on DETA python 3.9
 
 # - commands
 # edit python Interpreter
@@ -25,12 +25,7 @@ from pydantic import BaseModel
 app = FastAPI()
 
 
-class Item(BaseModel):
-    name: str
-    desc: Union[str, None] = None
-    price: float
-
-
+# example: response html code
 @app.get("/", response_class=HTMLResponse)  # home
 def root():
     return """
@@ -47,11 +42,19 @@ def root():
     """
 
 
+# example: response json data
 @app.get("/v")  # check Version
 def version():
     return {"version": "1.0"}
 
 
+class Item(BaseModel):
+    name: str
+    desc: Union[str, None] = None  # python 3.6 -> 3.9 use Union
+    price: float
+
+
+# example: post request
 @app.post("/items")
 def create_item(item: Item):
     return item
