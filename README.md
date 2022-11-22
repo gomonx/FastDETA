@@ -1,6 +1,6 @@
 # Fast DETA { Example project }
-## Make Eazy API. Power By FastAPI & Deta
-## สร้าง API ง่ายๆ ด้วย FastAPI(Python) และ Deta cloud
+### Make Eazy API. Power By FastAPI & Deta
+### สร้าง API ง่ายๆ ด้วย FastAPI(Python) และ Deta cloud
 
 ## How to Install
 - clone this git
