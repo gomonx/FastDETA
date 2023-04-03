@@ -34,8 +34,8 @@ def root():
             <title>Fast DETA</title>
         </head>
         <body>
-            <h1>Welcome to Fast DETA!</h1>
-            <h2>deploy on <a href="https://www.deta.sh" target="_blank">Deta cloud</a></h2>
+            <h1>Welcome to Fast SPACE!</h1>
+            <h2>deploy on <a href="https://deta.space/" target="_blank">Deta cloud</a></h2>
             <h3><a href="/docs">read Docs..</a></h3>
         </body>
     </html>

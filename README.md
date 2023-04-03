@@ -60,17 +60,25 @@ space new
 deta new
 ```
 
-#### You will see a JSON message similar to:
-```code
-{
-  "name": "fastapideta",
-  "runtime": "python3.7",
-  "endpoint": "https://fast.deta.dev/",
-  "visor": "enabled",
-  "http_auth": "enabled"
-}
+#### Edit you Spacefile (python example)
+```file
+v: 0
+app_name: FastSPACE
+micros:
+  - name: spaceAPI
+    src: ./
+    engine: python3.9
+    primary: true
+    dev: .venv/bin/uvicorn main:app --reload
 ```
-Now open your browser in your endpoint URL. In the example above it was https://fast.deta.dev/, but yours will be different
+
+#### You will see a message similar to:
+```code
+✓ Successfully started your build!
+✓ Successfully pushed your Spacefile!
+```
+Now open your browser in your endpoint URL.
+In the example above it was https://fastspace-2-i8989088.deta.app/, but yours will be different
 
 #### Pushing Changes
 ```code
