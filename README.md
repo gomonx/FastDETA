@@ -2,6 +2,7 @@
 ### Make Eazy API. Power By FastAPI & Deta Cloud
 ### สร้าง API ง่ายๆ ด้วย FastAPI(Python) และ Deta Cloud
 
+## Alert! DETA Change to Space!
 ---
 
 ## How to Install
@@ -33,35 +34,51 @@ uvicorn main:app --reload
 - for new user. go to [DETA](https://www.deta.sh) > sing up & create default project first
 - Read [How to Deploy..](https://fastapi.tiangolo.com/deployment/deta) or use code below
 
-### Use DETA CLI
+### Use DETA CLI {DETA Change to SPACE}
 
-#### Install Deta CLI
+#### Install Deta SPACE CLI (windows)
 ```terminal
-$ iwr https://get.deta.dev/cli.ps1 -useb | iex
+iwr https://get.deta.dev/space-cli.ps1 -useb | iex
+
+// legacy version
+iwr https://get.deta.dev/cli.ps1 -useb | iex
 ```
 
 #### Login
 ```terminal
-$ deta login
+space login
+
+// legacy version
+deta login
 ```
 
 #### Create new micro (app)
 ```terminal
-$ deta new
+space new
+
+// legacy version
+deta new
 ```
 
 #### You will see a JSON message similar to:
 ```code
 {
-        "name": "fastapideta",
-        "runtime": "python3.7",
-        "endpoint": "https://fast.deta.dev/",
-        "visor": "enabled",
-        "http_auth": "enabled"
+  "name": "fastapideta",
+  "runtime": "python3.7",
+  "endpoint": "https://fast.deta.dev/",
+  "visor": "enabled",
+  "http_auth": "enabled"
 }
 ```
 Now open your browser in your endpoint URL. In the example above it was https://fast.deta.dev/, but yours will be different
 
+#### Pushing Changes
+```code
+space push
+
+// legacy version
+deta push
+```
 ---
 
 ### Deta CLI Reference [read more..](https://docs.deta.sh/docs/cli/commands/)
