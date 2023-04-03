@@ -18,28 +18,24 @@
 
 from typing import Union
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 
+
 app = FastAPI()
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+templates = Jinja2Templates(directory="templates")
 
 
 # example: response html code
 @app.get("/", response_class=HTMLResponse)  # home
-def root():
-    return """
-    <html>
-        <head>
-            <title>Fast DETA</title>
-        </head>
-        <body>
-            <h1>Welcome to Fast SPACE!</h1>
-            <h2>deploy on <a href="https://deta.space/" target="_blank">Deta cloud</a></h2>
-            <h3><a href="/docs">read Docs..</a></h3>
-        </body>
-    </html>
-    """
+def root(request: Request):
+    return templates.TemplateResponse('home.html', {'request': request, 'msg': 'FAST SPACE!'})
 
 
 # example: response json data
